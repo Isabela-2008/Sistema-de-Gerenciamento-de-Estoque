@@ -1,0 +1,90 @@
+# Sistema de Gerenciamento de Estoque
+
+# Dicionário para armazenar os produtos e suas quantidades
+estoque = {}
+
+def exibir_menu():
+    """Exibe o menu principal para o usuário"""
+    print("\nSistema de Gerenciamento de Estoque")
+    print("1. Adicionar um novo produto ao estoque")
+    print("2. Atualizar a quantidade de um produto existente")
+    print("3. Remover um produto do estoque")
+    print("4. Exibir todos os produtos e suas respectivas quantidades")
+    print("5. Sair")
+    escolha = input("Escolha uma opção (1-5): ")
+    return escolha
+
+def adicionar_produto():
+    """Adiciona um novo produto ao estoque"""
+    produto = input("Digite o nome do produto: ")
+    while True:
+        try:
+            quantidade = int(input("Digite a quantidade do produto: "))
+            if quantidade < 0:
+                raise ValueError("A quantidade deve ser um número inteiro positivo.")
+            break
+        except ValueError as e:
+            print(e)
+    
+    estoque[produto] = estoque.get(produto, 0) + quantidade
+    print(f"Produto '{produto}' adicionado com sucesso!")
+
+def atualizar_quantidade():
+    """Atualiza a quantidade de um produto existente"""
+    produto = input("Digite o nome do produto: ")
+    if produto not in estoque:
+        print("Produto não encontrado.")
+        return
+    
+    while True:
+        try:
+            quantidade = int(input("Digite a nova quantidade do produto: "))
+            if quantidade < 0:
+                raise ValueError("A quantidade deve ser um número inteiro positivo.")
+            break
+        except ValueError as e:
+            print(e)
+    
+    estoque[produto] = quantidade
+    print(f"Quantidade do produto '{produto}' atualizada com sucesso!")
+
+def remover_produto():
+    """Remove um produto do estoque"""
+    produto = input("Digite o nome do produto: ")
+    if produto in estoque:
+        del estoque[produto]
+        print(f"Produto '{produto}' removido com sucesso!")
+    else:
+        print("Produto não encontrado.")
+
+def exibir_estoque():
+    """Exibe todos os produtos e suas respectivas quantidades"""
+    if not estoque:
+        print("O estoque está vazio.")
+    else:
+        print("Estoque atual:")
+        for produto, quantidade in estoque.items():
+            print(f"{produto}: {quantidade}")
+
+def main():
+    """Função principal que executa o menu e as operações do sistema"""
+    while True:
+        escolha = exibir_menu()
+        if escolha == '1':
+            adicionar_produto()
+        elif escolha == '2':
+            atualizar_quantidade()
+        elif escolha == '3':
+            remover_produto()
+        elif escolha == '4':
+            exibir_estoque()
+        elif escolha == '5':
+            print("Saindo do programa...")
+            break
+        else:
+            print("Opção inválida. Por favor, escolha uma opção entre 1 e 5.")
+
+if __name__ == "__main__":
+    main()
+
+ 
