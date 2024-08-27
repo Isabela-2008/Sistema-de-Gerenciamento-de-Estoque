@@ -1,0 +1,51 @@
+# Enunciado do Projeto: Sistema de Gerenciamento de Estoque
+
+## Objetivo
+
+Desenvolver um sistema de gerenciamento de estoque simples em Python. O sistema deve permitir que o usuário adicione, atualize, remova e exiba produtos no estoque, com suas respectivas quantidades.
+
+## Especificações
+
+1. **Adicionar Produto**
+   - O usuário deve ser capaz de adicionar um novo produto ao estoque, informando o nome do produto e a quantidade.
+   - Se o produto já existir, a quantidade deve ser incrementada.
+
+2. **Atualizar Quantidade**
+   - O usuário deve ser capaz de atualizar a quantidade de um produto existente no estoque.
+   - Caso o produto não exista, o sistema deve informar que o produto não foi encontrado.
+
+3. **Remover Produto**
+   - O usuário deve ser capaz de remover um produto do estoque.
+   - Caso o produto não exista, o sistema deve informar que o produto não foi encontrado.
+
+4. **Exibir Estoque**
+   - O sistema deve exibir todos os produtos e suas respectivas quantidades.
+   - Se não houver produtos no estoque, o sistema deve informar que o estoque está vazio.
+
+5. **Sair do Sistema**
+   - O usuário deve ser capaz de sair do sistema a qualquer momento.
+
+## Considerações
+
+- O sistema deve ser executado em modo de linha de comando (CLI).
+- O código deve ser organizado e comentado adequadamente.
+- O sistema deve ser robusto e lidar com entradas inválidas de maneira apropriada.
+
+
+# Sistema de Gerenciamento de Estoque
+
+Este é um simples sistema de gerenciamento de estoque em Python que permite ao usuário adicionar, atualizar, remover e exibir produtos e suas quantidades no estoque.
+
+## Funcionalidades
+
+- **Adicionar Produto:** Permite adicionar um novo produto ao estoque com uma quantidade específica.
+- **Atualizar Quantidade:** Permite atualizar a quantidade de um produto existente no estoque.
+- **Remover Produto:** Permite remover um produto do estoque.
+- **Exibir Estoque:** Exibe todos os produtos atualmente no estoque, junto com suas quantidades.
+
+## Como Usar
+
+1. Clone este repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/sistema-gerenciamento-estoque.git
